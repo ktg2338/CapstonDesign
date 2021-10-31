@@ -15,7 +15,23 @@
 3. Django
 4. matplotlib
 
-## 3. 라이센스
+## 3. 프로젝트 구조
+```buildoutcfg
+
+├─capstone_project
+│  └─main
+│      ├─static
+│      │  ├─css                                             - css파일 저장
+│      │  ├─images                                          - frontend 이미지 저장
+│      │  └─js                                              - javascript파일 저장
+│      └─templates
+│         └─capstone_project                                - html파일 저장
+├─reference                                                 - 개발 시 참고용 파일 저장
+└─venv                                                      - 가상 환경 파일들
+
+```
+
+## 4. 라이센스
 - 해당 웹 어플리케이션 라이센스는 MIT 라이센스입니다
 
 
