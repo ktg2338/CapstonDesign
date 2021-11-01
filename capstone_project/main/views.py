@@ -14,6 +14,8 @@ def index(request):
     company_dataFrame = pd.read_csv(path)
     data = []
     count = 0
+    data_min = 0
+    data_max = 0
     company_name = ''
 
     if request.method == 'POST':
@@ -42,12 +44,13 @@ def index(request):
                     value_market_close = row[4],
                 ))
 
-                count += 1
-
+                # 종가 데이터 수집 이후 chart.js로 보내야함
                 if row[4] != 'Close':
                     data.append(row[4])
 
             data = list(map(float, data))
+            data_max = max(data)
+            data_min = min(data)
 
             StockData.objects.bulk_create(stockdata_list)
     else:
@@ -56,7 +59,8 @@ def index(request):
     return render(request, 'capstone_project/index.html', {
         'form': form,
         'data': data,
-        'count': count,
+        'max': data_max,
+        'min': data_min,
     })
 
 def getCompanyStockCode(dataframe, company_name):
