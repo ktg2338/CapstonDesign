@@ -1,10 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% load bootstrap4 %}
 
-</body>
-</html>
+{% block title %} template extension test {% endblock %}
+
+{% block content %}
+<div>
+    <form method="get" action="" class="form">
+         <select name="company_name" id="id_comName">
+              <option value="삼성전자">삼성전자</option>
+              <option value="LG전자">LG전자</option>
+              <option value="네이버">네이버</option>
+         </select>
+    </form>
+</div>
+{% endblock %}
