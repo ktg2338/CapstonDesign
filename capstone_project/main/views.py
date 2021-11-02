@@ -22,7 +22,7 @@ def index(request):
         form = Company(request.POST)
 
         if form.is_valid():
-            company_name = form.cleaned_data['company_name']
+            company_name = form.cleaned_data['company_name_text']
             stock_code = getCompanyStockCode(company_dataFrame, company_name)
 
             dataFrame = pdr.get_data_yahoo(stock_code)
