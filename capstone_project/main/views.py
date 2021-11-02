@@ -13,7 +13,7 @@ def index(request):
     stock_path = 'C:/Users/sehunKim/Desktop/Project/CapstonDesign/capstone_project/main/data/'
     company_dataFrame = pd.read_csv(path)
     data = []
-    count = 0
+    date = []
     data_min = 0
     data_max = 0
     company_name = ''
@@ -47,6 +47,7 @@ def index(request):
                 # 종가 데이터 수집 이후 chart.js로 보내야함
                 if row[4] != 'Close':
                     data.append(row[4])
+                    date.append(row[0])
 
             data = list(map(float, data))
             data_max = max(data)
@@ -59,6 +60,7 @@ def index(request):
     return render(request, 'capstone_project/index.html', {
         'form': form,
         'data': data,
+        'label': date,
         'max': data_max,
         'min': data_min,
     })
