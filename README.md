@@ -14,18 +14,23 @@
 2. pandas-datareader (yahoo finance 데이터 크롤링에 필요합니다.)
 3. Django
 4. matplotlib
+5. chart.js
+6. csv(csv 리더 등)
 
 ## 3. 프로젝트 구조
 ```buildoutcfg
 
 ├─capstone_project
-│  └─main
-│      ├─static
-│      │  ├─css                                             - css파일 저장
-│      │  ├─images                                          - frontend 이미지 저장
-│      │  └─js                                              - javascript파일 저장
-│      └─templates
-│         └─capstone_project                                - html파일 저장
+│  ├─main
+│  │   ├─data                                               - data파일 저장용
+│  │   ├─static
+│  │   │  ├─css                                             - css파일 저장
+│  │   │  ├─images                                          - frontend 이미지 저장
+│  │   │  └─js                                              - javascript파일 저장
+│  │   └─templates
+│  │      └─capstone_project                                - html파일 저장
+│  └─templates                                              - base html파일 저장(템플릿 확장용)
+│
 ├─reference                                                 - 개발 시 참고용 파일 저장
 └─venv                                                      - 가상 환경 파일들
 
