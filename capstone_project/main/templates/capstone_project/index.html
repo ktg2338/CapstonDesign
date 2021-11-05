@@ -27,10 +27,12 @@
             data: {
                 labels: {{ label|safe }},
                 datasets:[{
+                    borderWidth: 5,
+                    borderColor: 'rgba(30, 144, 255, 0.8)',
                     data: {{ data|safe }},
                     label: 'costs',
                     fill: false,
-                    borderWidth: 5,
+                    tension: 0,
                 }]
             },
             options: {
